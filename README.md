@@ -39,7 +39,7 @@ Original | Fit example 1 | Fit example 2
 Scales image to the target dimensions. When target ratio is different from the original one an image distortion may occur. Useful when the user just needs to scale the image without maintaining its ratio.
 
 Original | Exapnd example 
---- | --- | ---
+--- | --- 
 | ![Original](testdata/original.jpg?raw=true "Original") | ![Exapnd](testdata/expand.jpg?raw=true "Exapnd") 
 
 # Adjust
@@ -47,7 +47,7 @@ Original | Exapnd example
 Scales image to the max target dimension while maintaining its original ratio. In case output ratio is different from the original one the image is centered and cropped. Useful when the user needs to standardize the output dimmensions without having monotone borders.
 
 Original | Adjust example 
---- | --- | ---
+--- | --- 
 | ![Original](testdata/original.jpg?raw=true "Original") | ![Adjust](testdata/adjust.jpg?raw=true "Adjust") 
 
 # Limit
@@ -55,7 +55,7 @@ Original | Adjust example
 Scales image fitting it within the limit defined in pixels along the specified dimension. Useful for setting a dimmensional limit for images without loosing their ratio.
 
 Original | Limit example 
---- | --- | ---
+--- | --- 
 | ![Original](testdata/original.jpg?raw=true "Original") | ![Limit](testdata/limit.jpg?raw=true "Limit") 
 
 # Tile
@@ -63,13 +63,13 @@ Original | Limit example
 Uses input image as a tile filling the output image with the original image copies as they fit. Isn't particularly useful but what the hell =).
 
 Original | Tile example 
---- | --- | ---
+--- | --- 
 | ![Original](testdata/original.jpg?raw=true "Original") | ![Tile](testdata/tile.jpg?raw=true "Tile") 
 
 # Binaries
 If you're feeling lazy and just want to grab the latest JARs, they are here:
-- [ontal-image-scaling-2.0.1.jar](https://akaine.github.io/ontal-image-scaling/bin/ontal-image-scaling-2.0.1.jar)
-- [ontal-image-scaling-2.0.1-javadoc.jar](https://akaine.github.io/ontal-image-scaling/bin/ontal-image-scaling-2.0.1-javadoc.jar)
+- [ontal-image-scaling-2.0.1.jar](https://github.com/akaine/ontal-image-scaling/blob/master/bin/ontal-image-scaling-2.0.1.jar)
+- [ontal-image-scaling-2.0.1-javadoc.jar](https://github.com/akaine/ontal-image-scaling/blob/master/bin/ontal-image-scaling-2.0.1-javadoc.jar)
 
 # API Docs
-Project api docs are available here: [API reference](https://akaine.github.io/ontal-image-scaling/api-doc/)
+Project api docs are available here: [API reference](https://github.com/akaine/ontal-image-scaling/master/api-doc/index.html)
