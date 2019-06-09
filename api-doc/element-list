@@ -1,4 +1,2 @@
 org.ontal.imgutil
-org.ontal.imgutil.exceptions
-org.ontal.imgutil.impl
-org.ontal.imgutil.settings
+org.ontal.imgutil.scaling
