@@ -72,4 +72,4 @@ If you're feeling lazy and just want to grab the latest JARs, they are here:
 - [ontal-image-scaling-2.0.1-javadoc.jar](https://github.com/akaine/ontal-image-scaling/blob/master/bin/ontal-image-scaling-2.0.1-javadoc.jar)
 
 # API Docs
-Project api docs are available here: [API reference](https://github.com/akaine/ontal-image-scaling/master/api-doc/index.html)
+Project api docs are available here: [API reference](https://akaine.github.io/ontal-image-scaling/api-doc/)
