@@ -34,7 +34,7 @@ final String htmlReadyScaledImageData =
 
 ## Fit
 
-Scales image fitting and centering it onto the output canvas with its original ratio conserved leaving unocupied canvas space filled with the specified background color (white by default)). This can be particularly useful when the user needs to standardize the output dimmensions and at the same time maintain the original image uncut.
+Scales image fitting and centering it onto the output canvas with its original ratio conserved leaving unoccupied canvas space filled with the specified background color (white by default)). This can be particularly useful when the user needs to standardize the output dimmensions and at the same time maintain the original image uncut.
 
 Original | Fit example 1 | Fit example 2
 --- | --- | ---
