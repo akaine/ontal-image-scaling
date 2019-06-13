@@ -13,7 +13,7 @@ import com.mortennobel.imagescaling.ResampleOp;
  */
 public class ExpandImage extends TransformImage {
 
-    protected ExpandImage(final BufferedImage inputImage) {
+    public ExpandImage(final BufferedImage inputImage) {
         super(inputImage);
     }
 

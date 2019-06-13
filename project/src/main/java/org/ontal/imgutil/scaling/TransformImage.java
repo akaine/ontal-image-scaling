@@ -43,7 +43,7 @@ public abstract class TransformImage {
      * @param args transformation arguments
      * @return scaled image
      */
-    protected BufferedImage transform(final Object... args) {
+    public BufferedImage transform(final Object... args) {
         validateArguments(args);
         outputWidth = calculateOutputWidth(args);
         outputHeight = calculateOutputHeight(args);

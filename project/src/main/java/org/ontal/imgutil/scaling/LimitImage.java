@@ -15,7 +15,7 @@ import com.mortennobel.imagescaling.ResampleOp;
  */
 public class LimitImage extends TransformImage {
 
-    protected LimitImage(final BufferedImage inputImage) {
+    public LimitImage(final BufferedImage inputImage) {
         super(inputImage);
     }
 

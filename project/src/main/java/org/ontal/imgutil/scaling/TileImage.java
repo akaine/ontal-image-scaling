@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
  */
 public class TileImage extends TransformImage {
 
-    protected TileImage(final BufferedImage inputImage) {
+    public TileImage(final BufferedImage inputImage) {
         super(inputImage);
     }
 

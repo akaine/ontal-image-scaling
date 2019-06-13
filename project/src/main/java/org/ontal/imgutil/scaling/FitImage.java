@@ -17,7 +17,7 @@ public class FitImage extends TransformImage {
 
     private int[] rgb = { 255, 255, 255 };
 
-    protected FitImage(final BufferedImage inputImage) {
+    public FitImage(final BufferedImage inputImage) {
         super(inputImage);
     }
 
@@ -58,7 +58,8 @@ public class FitImage extends TransformImage {
 
         // scale input image maintaining its ratio, sharpen it if it's becoming too small
         final ResampleOp resampleOp = new ResampleOp(width, height);
-        resampleOp.setUnsharpenMask(requiresUnsharpening(width, height) ? AdvancedResizeOp.UnsharpenMask.Soft : AdvancedResizeOp.UnsharpenMask.None);
+        resampleOp.setUnsharpenMask(requiresUnsharpening(width, height) ? 
+                AdvancedResizeOp.UnsharpenMask.Soft : AdvancedResizeOp.UnsharpenMask.None);
         final BufferedImage image = resampleOp.filter(inputImage, null);
 
         // create output image canvas and fill it with bg color

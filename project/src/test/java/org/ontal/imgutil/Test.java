@@ -1,9 +1,9 @@
 package org.ontal.imgutil;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import org.ontal.imgutil.scaling.ImageScaler;
 
 public class Test {
 
@@ -30,6 +30,14 @@ public class Test {
                 .tile(350, 250)
                 .saveAs(ImageFormat.JPG, Paths.get(basePath), "tile");
 
+        final String encoded = new ImageScaler(Paths.get(basePath, inputFile))
+                .fit(200, 200, new int[] { 192, 205, 224 })
+                .encode(ImageFormat.JPG);
+        final Path path = Paths.get(basePath, "base64.html");
+        final StringBuffer sb = new StringBuffer("<!DOCTYPE html><html><head><title>Display Image</title></head><body><img src=\"");
+        sb.append(encoded);
+        sb.append("\"/></body></html>");
+        Files.write(path, sb.toString().getBytes());
     }
 
 }

@@ -1,4 +1,4 @@
-package org.ontal.imgutil.scaling;
+package org.ontal.imgutil;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -7,13 +7,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
-import org.ontal.imgutil.Dimension;
-import org.ontal.imgutil.ImageFormat;
+import org.ontal.imgutil.scaling.AdjustImage;
+import org.ontal.imgutil.scaling.ExpandImage;
+import org.ontal.imgutil.scaling.FitImage;
+import org.ontal.imgutil.scaling.LimitImage;
+import org.ontal.imgutil.scaling.TileImage;
+import org.ontal.imgutil.scaling.TransformImage;
 
 /**
  * This utility offers quick image scaling transformations based on initial
@@ -206,6 +211,22 @@ public class ImageScaler {
         catch(final IOException e) {
             throw e;
         }
+    }
+
+    /**
+     * Encodes the produced image into a base64 string appending the mime type
+     * header, ready to be used in HTML.
+     *
+     * @param imageFormat image format
+     * @return base64 encoded image
+     * @throws IOException if an error occurs while writing
+     */
+    public String encode(final ImageFormat imageFormat) throws IOException {
+        final byte[] data = toByteArray(imageFormat);
+        final StringBuffer sb = new StringBuffer();
+        sb.append("data:").append(imageFormat.getMimeType()).append(";base64, ");
+        sb.append(Base64.getEncoder().encodeToString(data));
+        return sb.toString();
     }
 
     /**

@@ -11,32 +11,34 @@ public enum ImageFormat {
     /**
      * PNG: Portable Network Graphic
      */
-    PNG("png"),
+    PNG("png", "image/png"),
 
     /**
      * JPG: JPEG Image
      */
-    JPG("jpg"),
+    JPG("jpg", "image/jpeg"),
 
     /**
      * JPG: JPEG Image (alternative)
      */
-    JPEG("jpeg"),
+    JPEG("jpeg", "image/jpeg"),
 
     /**
      * BMP: Bitmap Image File
      */
-    BMP("bmp"),
+    BMP("bmp", "image/bmp"),
 
     /**
      * GIF: Graphical Interchange Format File
      */
-    GIF("gif");
+    GIF("gif", "image/gif");
 
     private String fileExtension;
+    private String mimeType;
 
-    private ImageFormat(final String fileExtension) {
+    private ImageFormat(final String fileExtension, final String mimeType) {
         this.fileExtension = fileExtension;
+        this.mimeType = mimeType;
     }
 
     /**
@@ -73,5 +75,14 @@ public enum ImageFormat {
      */
     public final String getName() {
         return this.fileExtension;
+    }
+
+    /**
+     * Returns mime type.
+     *
+     * @return mime type
+     */
+    public final String getMimeType() {
+        return this.mimeType;
     }
 }

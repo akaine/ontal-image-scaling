@@ -13,7 +13,7 @@ import com.mortennobel.imagescaling.ResampleOp;
  */
 public class AdjustImage extends TransformImage {
 
-    protected AdjustImage(final BufferedImage inputImage) {
+    public AdjustImage(final BufferedImage inputImage) {
         super(inputImage);
     }
 
