@@ -11,10 +11,9 @@ After the transformation is done, user can call any of the available convience m
 Usage examples:
 ```java
 // get scaled BufferedImage from an image in local file system
-final BufferedImage scaledImage = 
-        new ImageScaler(Paths.get("/tmp/originalImage.jpg"))
-                .adjust(200, 200)
-                .getImage();
+final BufferedImage scaledImage = new ImageScaler(Paths.get("/tmp/originalImage.jpg"))
+        .adjust(200, 200)
+        .getImage();
 
 // save scaled image into local file system from an input stream
 new ImageScaler(inputStream)
@@ -22,16 +21,14 @@ new ImageScaler(inputStream)
         .saveAs(ImageFormat.JPG, Paths.get("/tmp"), "scaledImage");
 
 // get scaled image bytes from image bytes
-final byte[] scaledImageBytes = 
-        new ImageScaler(originalImageBytes)
-                .fit(200, 200)
-                .toByteArray(ImageFormat.PNG);
+final byte[] scaledImageBytes = new ImageScaler(originalImageBytes)
+        .fit(200, 200)
+        .toByteArray(ImageFormat.PNG);
                 
 // get scaled image base64 encoded string from a BufferedImage
-final String htmlReadyScaledImageData = 
-        new ImageScaler(originalBufferedImage)
-                .limit(Dimension.WIDTH, 200)
-                .encode(ImageFormat.JPG);
+final String htmlReadyScaledImageData = new ImageScaler(originalBufferedImage)
+        .limit(Dimension.WIDTH, 200)
+        .encode(ImageFormat.JPG);
 ```
 
 ## Fit
