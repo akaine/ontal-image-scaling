@@ -15,19 +15,19 @@ final BufferedImage scaledImage =
                 .getImage();
 
 // save scaled image into local file system
-new ImageScaler(Paths.get("/tmp/originalImage.jpg"))
+new ImageScaler(inputStream)
         .fit(200, 200, new int[] { 192, 205, 224 })
         .saveAs(ImageFormat.JPG, Paths.get("/tmp"), "scaledImage");
 
 // get scaled image bytes
 final byte[] scaledImageBytes = 
-        new ImageScaler(Paths.get("/tmp/originalImage.jpg"))
+        new ImageScaler(originalImageBytes)
                 .fit(200, 200)
                 .toByteArray(ImageFormat.PNG);
                 
 // get scaled image base64 encoded string
 final String htmlReadyScaledImageData = 
-        new ImageScaler(Paths.get("/tmp/originalImage.jpg"))
+        new ImageScaler(originalBufferedImage)
                 .limit(Dimension.WIDTH, 200)
                 .encode(ImageFormat.JPG);
 ```
