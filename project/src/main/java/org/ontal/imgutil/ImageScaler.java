@@ -203,6 +203,9 @@ public class ImageScaler {
      * @throws IOException if an error occurs while writing
      */
     public byte[] toByteArray(final ImageFormat imageFormat) throws IOException {
+        if(outputImage == null) {
+            throw new IllegalStateException("Bad state. This operation should be invoked after a transformation.");
+        }
         try(final ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             ImageIO.write(outputImage, imageFormat.getName(), baos);
             baos.flush();
@@ -222,6 +225,9 @@ public class ImageScaler {
      * @throws IOException if an error occurs while writing
      */
     public String encode(final ImageFormat imageFormat) throws IOException {
+        if(outputImage == null) {
+            throw new IllegalStateException("Bad state. This operation should be invoked after a transformation.");
+        }
         final byte[] data = toByteArray(imageFormat);
         final StringBuffer sb = new StringBuffer();
         sb.append("data:").append(imageFormat.getMimeType()).append(";base64, ");
@@ -239,6 +245,9 @@ public class ImageScaler {
      * @throws IOException if an error occurs while writing
      */
     public void saveAs(final ImageFormat imageFormat, final Path outputDirectoryPath, final String name) throws IOException {
+        if(outputImage == null) {
+            throw new IllegalStateException("Bad state. This operation should be invoked after a transformation.");
+        }
         ImageIO.write(outputImage, imageFormat.getFileExtension(),
                 Paths.get(outputDirectoryPath.toAbsolutePath().toString(), name + "." + imageFormat.getFileExtension()).toFile());
     }
