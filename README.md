@@ -8,24 +8,24 @@ After the transformation is done, user can call any of the available for convien
 
 Usage examples:
 ```java
-// get scaled BufferedImage
+// get scaled BufferedImage from an image in local file system
 final BufferedImage scaledImage = 
         new ImageScaler(Paths.get("/tmp/originalImage.jpg"))
                 .adjust(200, 200)
                 .getImage();
 
-// save scaled image into local file system
+// save scaled image into local file system from an input stream
 new ImageScaler(inputStream)
         .fit(200, 200, new int[] { 192, 205, 224 })
         .saveAs(ImageFormat.JPG, Paths.get("/tmp"), "scaledImage");
 
-// get scaled image bytes
+// get scaled image bytes from image bytes
 final byte[] scaledImageBytes = 
         new ImageScaler(originalImageBytes)
                 .fit(200, 200)
                 .toByteArray(ImageFormat.PNG);
                 
-// get scaled image base64 encoded string
+// get scaled image base64 encoded string from a BufferedImage
 final String htmlReadyScaledImageData = 
         new ImageScaler(originalBufferedImage)
                 .limit(Dimension.WIDTH, 200)
