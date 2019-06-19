@@ -4,7 +4,7 @@ This utility offers quick image scaling transformations based on initial paramet
 
 The main utility object instance can be initialed with the original image data using any of the following supported types: `InputStream`, `BufferedImage`, `byte[]` and `Path`.
 
-Once the main object is initialized, a transformation method should be invoked. There are several scaling transofmations available: **Fit**, **Expand**, **Adjust**, **Limit** and **Tile**. 
+Once the main object is initialized, a transformation method should be invoked. There are several scaling transofmations available: **Fit**, **Expand**, **Adjust**, **Limit** and **Tile** (please see the examples of each scaling transformation type below). 
 
 After the transformation is done, user can call any of the available convience methods to obtain/save the resulting image.
 
